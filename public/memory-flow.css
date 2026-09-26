@@ -1,0 +1,5 @@
+.open-note{width:100%;margin:0 0 13px;background:var(--yellow);display:flex;justify-content:space-between;align-items:center}
+.open-note span{font-size:18px}
+.modal-note{margin:20px 0;max-width:440px;font-size:17px}
+.modal-note.note-revealed{animation:note-rise .45s ease both}
+@keyframes note-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}

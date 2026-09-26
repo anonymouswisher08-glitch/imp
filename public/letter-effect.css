@@ -1,0 +1,11 @@
+.note-paper{position:fixed;left:50%;top:50%;z-index:100;width:min(820px,calc(100vw - 48px));max-height:calc(100vh - 48px);overflow:auto;margin:0;padding:clamp(46px,7vw,82px) clamp(30px,7vw,78px) clamp(34px,5vw,56px);background:#fffefa;color:#2b2723;box-shadow:18px 22px 0 rgba(37,33,29,.24);transform:translate(-50%,-50%);transform-origin:50% 0}
+.note-paper:before{content:'';position:absolute;inset:8px;border:1px solid rgba(200,75,68,.22);pointer-events:none}
+.note-paper .modal-note{position:relative;max-width:none;margin:0;font:500 clamp(23px,2.9vw,34px)/1.45 'Caveat','Segoe Print',cursive;letter-spacing:.01em;white-space:pre-line;z-index:1}
+.note-paper small{position:relative;z-index:1;display:block;margin-top:20px;font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.paper-fold{position:absolute;right:0;top:0;border-top:35px solid #eee7df;border-left:35px solid transparent;width:0;height:0}
+.paper-close{position:absolute;right:13px;top:11px;z-index:3;margin:0;padding:3px 9px;background:transparent;color:var(--red);font:30px/1 var(--serif);text-transform:none;letter-spacing:0}
+.note-paper.paper-revealed{animation:letter-unfold .7s cubic-bezier(.18,1.25,.38,1) both}
+.ribbon-drop{position:fixed;z-index:120;width:12px;height:70px;border-radius:9px 9px 2px 2px;background:linear-gradient(90deg,#e84d71 0 34%,#ffd169 35% 66%,#e84d71 67%);box-shadow:2px 3px 0 rgba(80,37,45,.15);pointer-events:none;animation:ribbon-fall 1.05s cubic-bezier(.2,.7,.4,1) forwards}
+@keyframes letter-unfold{0%{opacity:0;transform:translate(-50%,-50%) perspective(800px) rotateX(-84deg) translateY(-90px) scale(.62)}65%{opacity:1;transform:translate(-50%,-50%) perspective(800px) rotateX(8deg) translateY(3px) scale(1.04)}100%{opacity:1;transform:translate(-50%,-50%) perspective(800px) rotateX(0) translateY(0) scale(1)}}
+@keyframes ribbon-fall{0%{opacity:0;transform:translateY(-30px) rotate(var(--ribbon-rotate)) scaleY(.3)}20%{opacity:1}100%{opacity:0;transform:translate(var(--ribbon-drift),260px) rotate(calc(var(--ribbon-rotate) + 170deg)) scaleY(1)}}
+@media(max-width:720px){.note-paper{width:calc(100vw - 24px);max-height:calc(100vh - 24px);padding:50px 28px 32px;box-shadow:10px 13px 0 rgba(37,33,29,.24)}.note-paper .modal-note{font-size:clamp(22px,7.5vw,30px);line-height:1.42}}
